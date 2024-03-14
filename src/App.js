@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import EventHandling from './materi/EventHandling'
-import Coba from './materi/Coba';
-import FruitList from './materi/FruitList';
-import Styling from './materi/Styling';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Kalku from './miniprj/Kalku';
-
+import Api from './studycase/Api';
+import RouterPages from './materi/RouterPages';
 function App() {
   return (
-   <div>
-    <Kalku/>
-   </div>
+    <div>
+      <Router>
+        <RouterPages />
+        <Routes>
+          <Route excat path='/' element={<Kalku />} />
+          <Route path='/suhu' element={<Api />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

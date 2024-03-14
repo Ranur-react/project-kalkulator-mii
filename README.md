@@ -1,3 +1,33 @@
+## Training Note
+
+Jika menggunakan API vanilla js "fetch" diperlukan konversi data dari string ke json(), sedangkan kalau pakai axios data tersebut bisa otomatis mejadi data json ex:
+
+```javaScript
+//vanilla js
+        fetch(URL)
+        //konversi data ke json
+        .then(response => response.json())
+        .then(data => setTemp(data.current.temp_f))
+        .catch(error => console.error('Error:', error));
+//axios
+        axios.get(URL)
+        //data sudah jadi json
+          .then(e => setTemp(e.data.current.temp_f))
+          .catch(error => console.error('Error:', error));
+```
+## Erorr Note
+
+Jika NPM belum terinstall secara global akan muncul erorr seperti berikut:
+
+# ![](/capture/1.%20error%20saat%20pertama%20kali%20create%20project%20react.png)
+
+Tindak lanjut yang dapat dilakukan dengan menginstall ulang node secara global dengan perintah:
+
+```
+npm install -g npm
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
